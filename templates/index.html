@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;1,100&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>DRE Database</h1>
+    </div>
+
+    <div class="center">
+
+    <form action="/submit" method="post">
+        <label for="dre"><h3 style="margin-bottom: 0px;">Enter a keyword:</h3></label>
+        <input type="text" name="dre" id="dre" style="margin: 15px;">        
+        <button type="submit">Search</button>
+    </form>
+    </div>
+    {% if (found == True) %}
+    <h2>Search Results:</h2>
+    <h3>Found {{ dataframe|length }} results </h2>
+    <div id="results">
+        {% set columns = ["Specification (according to technical documentation)", "Deviation", "Function of the characteristic affected by the deviation", "Possible consequences(failure modes)","Existing countermeasures","S","O","D","RPN","Necessary countermeasures","Responsible(& due date)","Evaluation(to be clearly explained and reasoned)","Approval","FMEA-record",""]%}
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                {% for column in columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in dataframe.iterrows() %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% elif (found == 2) %}
+    <h3>No results found.</h3>
+
+{% elif(found == 3)%}
+    <h3>Enter a value. </h3>
+{% endif %}
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

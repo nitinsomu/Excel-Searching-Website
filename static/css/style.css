@@ -1,0 +1,87 @@
+#results{
+    font-size: 13px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: #3aafa9;
+    color: #17252a;
+}
+.header{
+    background-color: #2b7a78;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+table{
+    border: 1px solid #17252a;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr{
+    background-color:#def2f1;
+}
+
+tr:nth-child(even){
+    background-color: #feffff;
+}
+
+h1{
+    font-size: 50px;
+    color: 	#FEFFFF;
+}
+
+th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2b7a78;
+  color: white;
+}
+h2{
+    font-size: 40px;
+}
+h3{
+    font-size: 30px
+}
+
+.center{
+    text-align: center;
+}
+h1,h2,h3{
+    font-family: 'Kanit', serif;
+    text-align: center;
+}
+
+button {
+    background-color:#2b7a78;h
+    color: #17252a;
+    border-radius:10px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    padding:5px;
+    font-weight: bolder;
+    border: 2px solid #17252a;
+  }
+
+  .table-container {
+    overflow-x: auto;
+
+}
+
+input{
+    background-color: #feffff;
+    border: 2px solid #17252a;
+    border-radius: 4px;
+}
+
+input:focus {
+    background-color: #def2f1;
+  }
